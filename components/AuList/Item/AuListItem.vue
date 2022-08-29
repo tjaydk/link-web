@@ -44,7 +44,7 @@ export default {
       >
     </div>
     <div class="au-list-item__meta">
-      <v-clamp autoresize :max-lines="2" class="au-list-item__title">
+      <v-clamp autoresize :max-lines="1" class="au-list-item__title">
         {{ link.title }}
       </v-clamp>
       <v-clamp autoresize :max-lines="2" class="au-list-item__description">
