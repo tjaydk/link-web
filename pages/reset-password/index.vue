@@ -1,7 +1,6 @@
 <script>
 export default {
   name: 'ResetPasswordPage',
-  auth: 'guest',
   data () {
     return {
       email: null,

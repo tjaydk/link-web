@@ -1,7 +1,6 @@
 <script>
 export default {
   name: 'LoginPage',
-  auth: 'guest',
   transition: 'test',
   data () {
     return {

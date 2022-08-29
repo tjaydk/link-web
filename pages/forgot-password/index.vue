@@ -1,7 +1,6 @@
 <script>
 export default {
-  name: 'ForgotPasswordPage',
-  auth: 'guest'
+  name: 'ForgotPasswordPage'
 }
 </script>
 

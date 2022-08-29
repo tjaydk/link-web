@@ -38,7 +38,7 @@ export default {
       >
       <img
         v-else
-        src="https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com"
+        src="https://picsum.photos/200/300"
         alt="No image"
         class="au-list-item__background-image"
       >

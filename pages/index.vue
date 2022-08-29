@@ -8,7 +8,7 @@ export default {
 <template>
   <div class="index-page">
     <div class="index-page__content">
-      <au-list />
+      <au-list @create="$router.push('/create')" />
     </div>
   </div>
 </template>

@@ -5,6 +5,10 @@ export default () => {
       error: null,
       noContent: false,
       items: []
+    },
+    create: {
+      loading: false,
+      error: null
     }
   }
 }

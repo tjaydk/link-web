@@ -3,11 +3,11 @@ const env = require('dotenv').config()
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Auktionsarkivet.dk | Hvad er det værd ?',
+    title: 'Lykkeridderneskamp.dk | Links til folket',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1' },
-      { hid: 'description', name: 'description', content: 'Søger du prisen på dit fund ? Vi har den helt sikkert.' },
+      { hid: 'description', name: 'description', content: 'Lykkeridderneskamp er et link sharing site for folket.' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
@@ -121,10 +121,6 @@ export default {
         }
       },
     }
-  },
-
-  router: {
-    middleware: ['auth']
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa

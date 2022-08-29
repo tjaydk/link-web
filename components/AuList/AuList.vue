@@ -34,7 +34,7 @@ export default {
       <a v-for="link in links" :key="link.id" :href="link.url" target="_blank" class="au-list__item">
         <au-list-item :link="link" />
       </a>
-      <div class="au-list__item au-list__item--ADD">
+      <div v-if="$auth.loggedIn" class="au-list__item au-list__item--ADD" @click="$emit('create')">
         <font-awesome-icon icon="fa-plus-circle" />
       </div>
     </div>

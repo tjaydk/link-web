@@ -18,5 +18,21 @@ export default {
       }).catch((err) => {
         commit(C.LINK_INDEX_FAILURE, err.response.data.message)
       })
+  },
+
+  /**
+   * @param commit
+   * @param url
+   */
+  async createLink ({ commit }, { url }) {
+    commit(C.LINK_CREATE_PENDING)
+    await this.$axios.post('/link', {
+      url
+    })
+      .then((res) => {
+        commit(C.LINK_CREATE_SUCCESS, res.data)
+      }).catch((err) => {
+        commit(C.LINK_CREATE_FAILURE, err.response.data.message)
+      })
   }
 }

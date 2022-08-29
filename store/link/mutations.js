@@ -51,5 +51,37 @@ export default {
       noContent: true,
       items: []
     })
+  },
+
+  /**
+   * @param state
+   */
+  [C.LINK_CREATE_PENDING] (state) {
+    set(state, 'create', {
+      loading: true,
+      error: null
+    })
+  },
+
+  /**
+   * @param state
+   * @param payload
+   */
+  [C.LINK_CREATE_SUCCESS] (state, payload) {
+    set(state, 'create', {
+      loading: false,
+      error: null
+    })
+  },
+
+  /**
+   * @param state
+   * @param payload
+   */
+  [C.LINK_CREATE_FAILURE] (state, payload) {
+    set(state, 'create', {
+      loading: false,
+      error: payload
+    })
   }
 }

@@ -1,5 +1,6 @@
 .au-list {
   @include full-size;
+  overflow-y: auto;
 
   &__items {
     display: flex;
@@ -24,8 +25,34 @@
 
     &--ADD {
       @include flex-center-content;
-      font-size: $font-size-desktop-splash;
-      color: $brand-color-black;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 100px;
+      width: 100%;
+      max-width: 100%;
+      font-size: 52px;
+      background-color: transparent;
+      color: rgba(255,255,255,.5);
+
+      &:hover {
+        box-shadow: none;
+      }
+
+      @include size('tablet') {
+        position: relative;
+        height: 200px;
+        width: 200px;
+        max-width: 400px;
+        font-size: $font-size-desktop-splash;
+        flex-grow: 1;
+        background-color: #262626;
+        color: $brand-color-black;
+
+        &:hover {
+          box-shadow: $box-shadow-far;
+        }
+      }
     }
   }
 

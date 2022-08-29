@@ -8,7 +8,7 @@ export default {
     },
     type: {
       type: String,
-      validator: val => ['text', 'password', 'email'].includes(val),
+      validator: val => ['text', 'password', 'email', 'url'].includes(val),
       default: 'text'
     },
     placeholder: {
