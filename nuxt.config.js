@@ -22,6 +22,8 @@ export default {
 
   env: env.parsed,
 
+  ssr: false,
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/scss/main.scss',
@@ -119,7 +121,7 @@ export default {
           login: '/',
           logout: '/login'
         }
-      },
+      }
     }
   },
 
