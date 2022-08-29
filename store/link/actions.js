@@ -6,9 +6,11 @@ export default {
    * @param commit
    * @param payload
    */
-  async getLinkIndex ({ commit }, payload) {
+  async getLinkIndex ({ commit }) {
     commit(C.LINK_INDEX_PENDING)
-    await this.$axios.get('/link', payload)
+    await this.$axios.get('/link', {
+      baseURL: process.env.PUBLIC_URL
+    })
       .then((res) => {
         if (res.status === 200) {
           commit(C.LINK_INDEX_SUCCESS, res.data)

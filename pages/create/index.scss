@@ -7,10 +7,16 @@
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
+
+    @include size('tablet') {
+      flex-direction: column;
+      width: 600px;
+    }
   }
 
   &__input {
     margin: $margin-lg;
+    width: 100%;
   }
 
   &__error {

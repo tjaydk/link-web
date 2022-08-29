@@ -39,7 +39,7 @@ export default {
       </div>
       <form class="au-login__form" @submit="login">
         <h1 class="au-login__header">
-          AuktionsArkivet
+          Lykkeriddernes Kamp
         </h1>
         <div class="au-login__sub-header">
           Log ind
