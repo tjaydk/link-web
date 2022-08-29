@@ -71,9 +71,7 @@ export default {
     // https://auth.nuxtjs.org/
     '@nuxtjs/auth-next',
     // https://www.npmjs.com/package/@nuxtjs/style-resources
-    '@nuxtjs/style-resources',
-    // https://www.npmjs.com/package/vue-web-cam
-    'vue-web-cam/nuxt'
+    '@nuxtjs/style-resources'
   ],
 
   fontawesome: {

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import { library, config } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faEye, faEyeSlash, faX, faCameraRetro, faMagnifyingGlass, faEllipsis } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faEyeSlash, faX, faCameraRetro, faMagnifyingGlass, faEllipsis, faPlus, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
 
 // This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false
@@ -14,6 +14,8 @@ library.add(faX)
 library.add(faCameraRetro)
 library.add(faMagnifyingGlass)
 library.add(faEllipsis)
+library.add(faPlus)
+library.add(faPlusCircle)
 
 // Register the component globally
 Vue.component('FontAwesomeIcon', FontAwesomeIcon)

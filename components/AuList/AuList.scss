@@ -3,31 +3,29 @@
 
   &__items {
     display: flex;
-    flex-flow: row nowrap;
-    scroll-snap-type: x mandatory;
-    overflow-x: auto;
-    overflow-y: hidden;
-    height: $viewport-full-height;
-    white-space: nowrap;
-
-    @include size('tablet') {
-      scroll-snap-type: y mandatory;
-      overflow-y: auto;
-      overflow-x: hidden;
-      flex-flow: row wrap;
-    }
+    flex-flow: row wrap;
+    gap: $margin-lg;
+    margin: $margin-lg;
   }
 
   &__item {
-    display: flex;
-    scroll-snap-align: center;
-    height: $viewport-full-height;
-    width: 100vw;
-    border: 1px solid black;
-    flex: none;
+    height: 200px;
+    width: 200px;
+    max-width: 400px;
+    flex-grow: 1;
+    background-color: #262626;
+    color: $brand-color-white;
+    cursor: pointer;
+    text-decoration: none;
 
-    @include size('tablet') {
-      scroll-snap-align: start;
+    &:hover {
+      box-shadow: $box-shadow-far;
+    }
+
+    &--ADD {
+      @include flex-center-content;
+      font-size: $font-size-desktop-splash;
+      color: $brand-color-black;
     }
   }
 
@@ -37,8 +35,3 @@
     padding: $margin-xl;
   }
 }
-
-//#au-list {
-//  scroll-padding: 100%;
-//  overflow-y: hidden;
-//}

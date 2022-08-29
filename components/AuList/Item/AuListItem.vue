@@ -1,8 +1,13 @@
 <script>
+import VClamp from 'vue-clamp'
+
 export default {
   name: 'AuListItem',
+  components: {
+    VClamp
+  },
   props: {
-    item: {
+    link: {
       type: Object,
       required: true
     }
@@ -11,25 +16,41 @@ export default {
     return {
       showModal: false
     }
+  },
+  computed: {
+    description () {
+      const parser = new DOMParser()
+      const doc = parser.parseFromString(this.link.description, 'text/html')
+      return doc.body.firstChild.nodeValue
+    }
   }
 }
 </script>
 
 <template>
   <div class="au-list-item">
-    <div class="au-list-item__row">
-      <div class="au-list-item__row-title">
-        {{ item.title }}
-      </div>
-      <div class="au-list-item__row-description">
-        {{ item.description }}
-      </div>
-      <div class="au-list-item__row-meta">
-<!--        {{ item.price | currency }}-->
-        <au-chart />
-      </div>
+    <div class="au-list-item__background">
+      <img
+        v-if="link.image_url"
+        :src="link.image_url"
+        :alt="link.title"
+        class="au-list-item__background-image"
+      >
+      <img
+        v-else
+        src="https://via.placeholder.com/150/FF0000/FFFFFF?Text=Down.com"
+        alt="No image"
+        class="au-list-item__background-image"
+      >
     </div>
-    <au-list-item-modal v-if="showModal" :item="item" @close="showModal = false" />
+    <div class="au-list-item__meta">
+      <div class="au-list-item__title">
+        {{ link.title }}
+      </div>
+      <v-clamp autoresize :max-lines="2" class="au-list-item__description">
+        {{ description }}
+      </v-clamp>
+    </div>
   </div>
 </template>
 

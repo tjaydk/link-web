@@ -1,42 +1,31 @@
 .au-list-item {
   display: flex;
-  scroll-snap-align: center;
-  height: $viewport-full-height;
-  width: 100vw;
-  outline: 1px solid $brand-color-white;
-  outline-style: outset;
-  flex: none;
-  white-space: normal;
-  overflow: hidden;
+  flex-flow: column nowrap;
 
-  @include size('tablet') {
-    scroll-snap-align: start;
-  }
-
-  &__header {
-    font-weight: $font-weight-bold;
-  }
-
-  &__row {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-evenly;
-    height: calc(100% - 75px);
+  &__background {
+    @include background-image;
+    position: relative;
+    height: 100px;
     width: 100%;
-    padding: $margin-xl;
+    padding: $margin-sm;
     overflow: hidden;
-    text-align: center;
-    color: $brand-color-white;
+  }
 
-    &-title {
-      font-size: $font-size-desktop-h6;
-      font-weight: $font-weight-bold;
-      margin-bottom: $margin-md;
-    }
+  &__meta {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+    padding: $margin-md;
+  }
 
-    &-meta {
-      font-size: $font-size-desktop-h5;
-      font-weight: $font-weight-bold;
-    }
+  &__title {
+    width: 100%;
+    margin-bottom: $margin-md;
+  }
+
+  &__description {
+    width: 100%;
+    color: rgba(255,255,255,.3);
+    font-weight: $font-weight-thin;
   }
 }

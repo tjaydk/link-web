@@ -1,62 +1,28 @@
 <script>
-import { mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex'
 
 export default {
   name: 'AuList',
-  props: {
-    perPage: {
-      type: Number,
-      default: 50
-    },
-    currentPage: {
-      type: Number,
-      default: 1
-    },
-    lastPage: {
-      type: Number,
-      default: 1
-    }
-  },
   computed: {
     ...mapState({
-      items: state => state.auctions.index.items,
-      loading: state => state.auctions.index.loading,
-      error: state => state.auctions.index.loading
-    }),
-    data () {
-      return this.items.data || []
-    }
+      links: state => state.link.index.items,
+      linkLoading: state => state.link.index.loading,
+      linkNoContent: state => state.link.index.noContent,
+      linkError: state => state.link.index.error
+    })
   },
   mounted () {
-    // this.initializeObserver()
+    this.getLinkIndex()
   },
   methods: {
-    initializeObserver () {
-      const options = {
-        root: document.querySelector('#au-list'),
-        rootMargin: '100px',
-        threshold: 1.0
-      }
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          // Each entry describes an intersection change for one observed
-          // target element:
-          //   entry.boundingClientRect
-          //   entry.intersectionRatio
-          //   entry.intersectionRect
-          //   entry.isIntersecting
-          //   entry.rootBounds
-          //   entry.target
-          //   entry.time
-          if (this.data.length && entry.isIntersecting) {
-            this.$emit('load')
-          }
-        })
-      }, options)
-
-      const target = document.querySelector('#au-list__loader')
-      observer.observe(target)
+    ...mapActions({
+      getLinkIndex: 'link/getLinkIndex'
+    }),
+    refresh () {
+      this.getLinkIndex()
+    },
+    goTo (url) {
+      this.$router.push(url)
     }
   }
 }
@@ -64,8 +30,16 @@ export default {
 
 <template>
   <div class="au-list">
-    <div id="au-list" class="au-list__items">
-      <au-list-item v-for="item in data" :key="item.item" :item="item" />
+    <div v-if="!linkNoContent" id="au-list" class="au-list__items">
+      <a v-for="link in links" :key="link.id" :href="link.url" target="_blank" class="au-list__item">
+        <au-list-item :link="link" />
+      </a>
+      <div class="au-list__item au-list__item--ADD">
+        <font-awesome-icon icon="fa-plus-circle" />
+      </div>
+    </div>
+    <div v-else class="au-list__no-content">
+      Ingen links
     </div>
   </div>
 </template>
