@@ -1,0 +1,11 @@
+.login-page {
+  height: $viewport-full-height;
+  width: 100vw;
+
+  &__background {
+    @include background-image;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(to top, $brand-color-red, $brand-color-red-light);
+  }
+}

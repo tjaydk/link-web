@@ -1,0 +1,37 @@
+.camera-page {
+  @include full-view-port;
+  background: linear-gradient(to top, $brand-color-red, $brand-color-red-light);
+  overflow: hidden;
+
+  &__content {
+    @include full-size;
+    @include flex-center-content;
+    z-index: 1;
+  }
+
+  &__list {
+    @include flex-center-content;
+    @include position();
+    @include full-size;
+    z-index: 2;
+    background-color: $brand-color-red;
+  }
+
+  &__control {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+  }
+
+  &__controls {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    bottom: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    padding: $margin-lg;
+  }
+}

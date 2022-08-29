@@ -1,0 +1,63 @@
+$auSpinnerSize: 100px;
+
+.au-spinner-grid {
+  width: $auSpinnerSize;
+  height: $auSpinnerSize;
+  margin: 100px auto;
+}
+
+.au-spinner-grid .au-spinner {
+  width: 33%;
+  height: 33%;
+  background-color: #333;
+  float: left;
+  -webkit-animation: au-spinnerGridScaleDelay 1.3s infinite ease-in-out;
+  animation: au-spinnerGridScaleDelay 1.3s infinite ease-in-out;
+}
+.au-spinner-grid .au-spinner1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+.au-spinner-grid .au-spinner2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s; }
+.au-spinner-grid .au-spinner3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s; }
+.au-spinner-grid .au-spinner4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s; }
+.au-spinner-grid .au-spinner5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+.au-spinner-grid .au-spinner6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s; }
+.au-spinner-grid .au-spinner7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s; }
+.au-spinner-grid .au-spinner8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s; }
+.au-spinner-grid .au-spinner9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s; }
+
+@-webkit-keyframes au-spinnerGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+}
+
+@keyframes au-spinnerGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  } 35% {
+      -webkit-transform: scale3D(0, 0, 1);
+      transform: scale3D(0, 0, 1);
+    }
+}

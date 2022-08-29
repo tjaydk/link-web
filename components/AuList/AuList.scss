@@ -1,0 +1,44 @@
+.au-list {
+  @include full-size;
+
+  &__items {
+    display: flex;
+    flex-flow: row nowrap;
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: $viewport-full-height;
+    white-space: nowrap;
+
+    @include size('tablet') {
+      scroll-snap-type: y mandatory;
+      overflow-y: auto;
+      overflow-x: hidden;
+      flex-flow: row wrap;
+    }
+  }
+
+  &__item {
+    display: flex;
+    scroll-snap-align: center;
+    height: $viewport-full-height;
+    width: 100vw;
+    border: 1px solid black;
+    flex: none;
+
+    @include size('tablet') {
+      scroll-snap-align: start;
+    }
+  }
+
+  &__no-content {
+    width: 100%;
+    text-align: center;
+    padding: $margin-xl;
+  }
+}
+
+//#au-list {
+//  scroll-padding: 100%;
+//  overflow-y: hidden;
+//}

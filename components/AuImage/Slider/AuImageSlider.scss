@@ -1,0 +1,12 @@
+.au-image-slider {
+  @include full-size;
+  overflow: hidden;
+
+  &__content {
+    opacity: .4;
+  }
+
+  &__body {
+    @include background-image;
+  }
+}

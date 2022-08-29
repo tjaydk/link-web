@@ -1,0 +1,132 @@
+.au-forgot {
+  @include flex-center-content;
+  @include full-size;
+
+  &__content {
+    @include full-size;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-x: auto;
+    padding: $margin-lg;
+    color: white;
+    max-height: 400px;
+
+    @include size('tablet') {
+      width: 450px;
+      height: 400px;
+      border-radius: $border-radius-window-small;
+      box-shadow: $box-shadow-far;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__header {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-desktop-h2;
+    font-weight: $font-weight-thin;
+    margin: $margin-md;
+    animation: slideUpFade .5s ease-in-out;
+  }
+
+  &__sub-header {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-desktop-h4;
+    margin: $margin-md;
+    text-transform: uppercase;
+    animation: slideUpFade .5s ease-in-out both;
+    animation-delay: .5s;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    margin-top: $margin-xl;
+  }
+
+  &__control {
+
+    &__error {
+      background-color: #8e1921;
+    }
+
+    &-button {
+      margin-bottom: $margin-xl;
+      box-shadow: $box-shadow-far;
+    }
+
+    &-link {
+      font-size: $font-size-desktop-small;
+      color: white;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      opacity: .8;
+      margin: $margin-md;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    width: 100%;
+    margin: $margin-sm $margin-md;
+    animation: fade .5s ease-in-out;
+  }
+
+  &__input {
+    width: 100%;
+    padding: $margin-lg;
+    color: $brand-color-white;
+    border-radius: 50px;
+    border: none;
+    transition: all .2s ease-in-out;
+    font-size: $font-size-desktop-h6;
+    background-color: rgba(255,255,255,.5);
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: $box-shadow-far;
+    }
+
+    @include size('tablet') {
+      font-size: $font-size-desktop-p;
+    }
+
+    &-icon {
+      @include flex-center-content;
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 60px;
+      width: 60px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      color: white;
+      margin-top: 2px;
+      //background-color: #86b2ce;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}

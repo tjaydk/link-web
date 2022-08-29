@@ -1,0 +1,93 @@
+.au-list-item-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: $viewport-full-height;
+  width: 100%;
+  background-color: $brand-color-secondary;
+  animation: fade .2s ease-out;
+  cursor: auto;
+  z-index: 99;
+
+  &__close {
+    position: absolute;
+    bottom: $margin-lg;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__content {
+    @include flex-center-content;
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    z-index: 5;
+
+    &-body {
+      max-width: 1200px;
+    }
+  }
+
+  &__header {
+    font-size: $font-size-desktop-h1;
+    padding: $margin-xl $margin-lg $margin-sm;
+    animation: slideUpFade .5s both;
+  }
+
+  &__body {
+
+    &-description {
+      max-height: 200px;
+      overflow-y: auto;
+      animation: slideUpFade .5s both;
+    }
+
+    &-element {
+      margin: $margin-md $margin-md 0;
+      padding: 0 $margin-md;
+
+      &--right {
+        font-style: italic;
+        text-align: right;
+        font-size: $font-size-desktop-small;
+        opacity: .5;
+      }
+    }
+  }
+
+  &__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 70%;
+    width: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    @include size('desktop') {
+      height: 80%;
+    }
+
+    &-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to top, $brand-color-secondary 5%, rgba(0,0,0,.01));
+      z-index: 2;
+      pointer-events: none;
+
+      @include size('desktop') {
+        background: linear-gradient(to top, $brand-color-secondary 5%, rgba(0,0,0,.01));
+      }
+    }
+
+    &-image {
+      min-height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}

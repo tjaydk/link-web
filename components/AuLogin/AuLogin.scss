@@ -1,0 +1,114 @@
+.au-login {
+  @include flex-center-content;
+  @include full-size;
+
+  &__content {
+    @include full-size;
+    display: flex;
+    flex-flow: row wrap;
+    overflow-x: auto;
+    padding: $margin-lg;
+    color: white;
+
+    @include size('tablet') {
+      width: 450px;
+      height: 700px;
+      border-radius: $border-radius-window-small;
+      box-shadow: $box-shadow-far;
+    }
+  }
+
+  &__logo {
+    @include flex-center-content;
+    width: 100%;
+    margin-bottom: $margin-md;
+
+    &-image {
+      height: 90px;
+    }
+
+    @include size('tablet') {
+
+      &-image {
+        height: 200px;
+      }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  &__header {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-desktop-h2;
+    font-weight: $font-weight-thin;
+    margin: $margin-md;
+    animation: slideUpFade .5s ease-in-out;
+  }
+
+  &__sub-header {
+    font-family: 'Amatic SC', cursive;
+    text-align: center;
+    width: 100%;
+    font-size: $font-size-desktop-h4;
+    margin: $margin-md;
+    text-transform: uppercase;
+    animation: slideUpFade .5s ease-in-out both;
+    animation-delay: .5s;
+  }
+
+  &__error-wrapper {
+    text-align: center;
+    width: 100%;
+    animation: slideUpFade .5s ease-in-out;
+  }
+
+  &__error {
+    color: #da5e64;
+  }
+
+  &__controls {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    width: 100%;
+    margin-top: $margin-xl;
+  }
+
+  &__control {
+
+    &__error {
+      background-color: #8e1921;
+    }
+
+    &-button {
+      margin-bottom: $margin-xl;
+      box-shadow: $box-shadow-far;
+    }
+
+    &-link {
+      font-size: $font-size-desktop-small;
+      color: white;
+      width: 100%;
+      text-align: center;
+      cursor: pointer;
+      opacity: .8;
+      margin: $margin-md;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__input-wrapper {
+    position: relative;
+    width: 100%;
+    animation: fade .5s ease-in-out;
+  }
+}

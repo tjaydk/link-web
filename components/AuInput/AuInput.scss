@@ -1,0 +1,45 @@
+.au-input {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    padding: $margin-lg;
+    color: $brand-color-white;
+    border-radius: 50px;
+    border: none;
+    transition: all .2s ease-in-out;
+    font-size: $font-size-desktop-h6;
+    background-color: rgba(255,255,255,.5);
+
+    &::placeholder {
+      color: white;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: $box-shadow-far;
+    }
+
+    @include size('tablet') {
+      font-size: $font-size-desktop-p;
+    }
+  }
+
+  &__icon {
+    @include flex-center-content;
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    color: white;
+    margin-top: 2px;
+
+    &:hover {
+      opacity: .8;
+    }
+  }
+}

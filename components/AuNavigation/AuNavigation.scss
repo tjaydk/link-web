@@ -1,0 +1,110 @@
+.au-navigation {
+  @include full-size;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $margin-xl;
+  height: 100%;
+  margin-top: calc(#{$viewport-full-height} * .1);
+
+  &__column, &__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__column:first-child {
+    @include flex-center-content;
+    width: 100%;
+
+    @include size('tablet') {
+      width: 50%;
+    }
+  }
+
+  &__column:last-child {
+    display: none;
+    width: 100%;
+
+    @include size('tablet') {
+      display: flex;
+    }
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &__icon {
+    width: 100%;
+  }
+
+  &__logo {
+    display: none;
+    font-size: $font-size-desktop-h5;
+    margin-left: $margin-lg;
+
+    @include size('tablet') {
+      display: block;
+    }
+  }
+
+  &__links {
+    gap: 100px;
+  }
+
+  &__link {
+    font-size: $font-size-desktop-h5;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .8;
+    transition: .2s opacity ease-in-out;
+    color: white;
+
+    &:visited {
+      color: white;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__toggle-wrapper {
+    @include flex-center-content;
+    position: relative;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    opacity: .8;
+  }
+
+  &__toggle {
+    @include full-size;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    transition: .2s all ease-in-out;
+    padding: $margin-sm;
+
+    &-line {
+      background-color: white;
+      height: 4px;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &--ACTIVE {
+      height: 10px;
+      padding: 0;
+    }
+  }
+}
